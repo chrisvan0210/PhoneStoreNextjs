@@ -1,0 +1,113 @@
+{
+  "users":[
+    {
+        "userId": 0,
+        "username": "chrish dog",
+        "phone" : "samsung",
+        "friend": [
+            {
+                "friendId": 1,
+                "name": "stupid bird"
+            },
+            {
+                "friendId": 2,
+                "name": "stupid bird1"
+            }
+        ]
+    },
+    {
+        "userId": 1,
+        "username": "chrish dog1",
+        "phone" : "iphone1",
+        "friend": [
+            {
+                "friendId": 1,
+                "name": "stupid cat"
+            },
+            {
+                "friendId": 2,
+                "name": "stupid cat1"
+            }
+        ]
+    },
+    {
+        "userId": 2,
+        "username": "chrish dog2",
+        "phone" : "nokia2",
+        "friend": [
+            {
+                "friendId": 1,
+                "name": "stupid tiger"
+            },
+            {
+                "friendId": 2,
+                "name": "stupid tiger1"
+            },
+            {
+                "friendId": 3,
+                "name": "stupid tiger2"
+            }
+        ]
+    },
+    {
+        "userId": 0,
+        "username": "chrish jojo",
+        "phone" : "samsung",
+        "friend": [
+            {
+                "friendId": 1,
+                "name": "stupid jojo"
+            },
+            {
+                "friendId": 2,
+                "name": "stupid jojo1"
+            }
+        ]
+    },
+    {
+        "userId": 0,
+        "username": "chrish app",
+        "phone" : "iphone",
+        "friend": [
+            {
+                "friendId": 1,
+                "name": "stupid app"
+            },
+            {
+                "friendId": 2,
+                "name": "stupid app1"
+            }
+        ]
+    },
+    {
+        "userId": 0,
+        "username": "chrish app",
+        "phone" : "iphone",
+        "friend": [
+            {
+                "friendId": 1,
+                "name": "stupid app"
+            },
+            {
+                "friendId": 2,
+                "name": "stupid app1"
+            },
+            {
+                "friendId": 3,
+                "name": "stupid app2"
+            }
+        ]
+    },
+    {
+        "userId": 0,
+        "username": "chrish sony",
+        "phone" : "sony",
+        "friend": [
+            {
+                "friendId": 1,
+                "name": "stupid app"
+            }
+        ]
+    }
+]
+}
