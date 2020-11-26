@@ -12,9 +12,9 @@ async function setup() {
   await db.migrate({ force: 'last'});
 
   const people = await db.all('SELECT * FROM People');
-  console.log('all person', JSON.stringify(people, null, 2));
+  console.log('table Person', JSON.stringify(people, null, 2));
 
   const phone = await db.all(`SELECT * FROM Phone`);
-  console.log('all phone', JSON.stringify(phone, null, 2));
+  console.log('table Phone', JSON.stringify(phone, null, 2));
 }
 setup();

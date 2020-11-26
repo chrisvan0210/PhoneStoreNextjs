@@ -4,6 +4,7 @@ const sqlite3 = require('sqlite3');
 const sqlite = require('sqlite');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+import cookie from 'cookie'
 
 export default async function Login(req: NextApiRequest, res: NextApiResponse) {
 
@@ -18,7 +19,16 @@ export default async function Login(req: NextApiRequest, res: NextApiResponse) {
             // result == true
             if (!err && result) {
                 const  token = jwt.sign({ sub:people.id,Email:people.email }, secretKey,{expiresIn:'1h'});
-                res.json({ authToken: token })
+                
+                res.setHeader('Set-Cookie',cookie.serialize('auth',token,{
+                    httpOnly:true,
+                    secure:process.env.NODE_ENV !== 'development', // allow not use https on dev
+                    sameSite:'strict', //same with true
+                    maxAge: 3600,
+                    path:'/' 
+                }))
+
+                res.json({ message: "Welcome back Master!" })
             } else {
                 res.json({ message: "Oop! Something went wrong!" })
             }

@@ -7,8 +7,16 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { myGetApi } from '../../api/myGetApi';
+import { NextPageContext } from 'next';
+import { UserPerson } from '../../api/userPerson';
 
-export default function Phones({lists}){
+
+export interface PhonesProps{
+  phoneList : UserPerson[] | undefined
+}
+
+export default function Phones({phoneList}:PhonesProps){
   
 
     return (
@@ -23,16 +31,16 @@ export default function Phones({lists}){
             </TableRow>
           </TableHead>
           <TableBody>
-            {lists.map((list) => (
-              <TableRow key={list.id}>
+            {/* {phoneList.map((phone) => (
+              <TableRow key={phone.id}>
                 <TableCell component="th" scope="row">
-                  {list.id}
+                  {phone.id}
                 </TableCell>
-                <TableCell align="right">{list.brand}</TableCell>
-                <TableCell align="right">{list.model}</TableCell>
-                <TableCell align="right">{list.ownerId}</TableCell>
+                <TableCell align="right">{phone.brand}</TableCell>
+                <TableCell align="right">{phone.model}</TableCell>
+                <TableCell align="right">{phone.ownerId}</TableCell>
               </TableRow>
-            ))}
+            ))} */}
           </TableBody>
         </Table>
       </TableContainer>
@@ -40,8 +48,7 @@ export default function Phones({lists}){
 }
 
 
-Phones.getInitialProps = async () =>{
-    const resp = await fetch("http://localhost:3000/api/phonesBrands");
-    const data = await resp.json();
-    return {lists : data}
+Phones.getInitialProps = async (ctx:NextPageContext) =>{
+    const resp = await myGetApi("http://localhost:3000/api/phonesBrands",ctx);
+    return {phoneList: resp.res}
 }

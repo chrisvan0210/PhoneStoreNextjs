@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="english">
         <Head>
-        <title>Your page</title>
+        {/* <title>Your page</title> */}
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
