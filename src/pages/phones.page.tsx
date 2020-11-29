@@ -10,8 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 import { myGetApi } from '../../api/myGetApi';
 import { NextPageContext } from 'next';
-import { UserPerson } from '../../api/typeData';
-import { Title } from '@material-ui/icons';
+import { typePhone } from '../../api/typeData';
 import Link from 'next/link';
 
 
@@ -45,7 +44,7 @@ const useStyles = makeStyles({
 });
 
 export interface PhonesProps {
-  phoneList: UserPerson[] | undefined
+  phoneList: typePhone[] | undefined
 }
 
 export default function Phones({ phoneList }: PhonesProps) {

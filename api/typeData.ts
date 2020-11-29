@@ -4,7 +4,7 @@ export interface UserPerson {
     username:string;
 }
 
-export interface typePHone{
+export interface typePhone{
     id: number;
     brand: string;
     model: string;
