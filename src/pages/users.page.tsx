@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { UserPerson } from '../../api/userPerson'
+import { UserPerson } from '../../api/typeData'
 
 export interface UsersProps{
     users : UserPerson[]|undefined;

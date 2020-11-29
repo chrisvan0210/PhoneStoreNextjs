@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
-import  Router  from 'next/router';
+import Router from 'next/router';
+import { Email } from '@material-ui/icons';
 
 function SignUp(props) {
     const usernameRef = useRef<HTMLInputElement>(null);
@@ -9,26 +10,38 @@ function SignUp(props) {
     const [message, setMessage] = useState<any>(null);
     const handleSignUp = async (e) => {
         e.preventDefault();
-        await fetch('http://localhost:3000/api/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: usernameRef.current.value,
-                email: emailRef.current.value,
-                password: passRef.current.value
-            })
-        }).then(async res => {
-            const resp = await res.json()
-            setMessage(resp)
-            Router.replace('/')
-        }).catch(err => {
-            console.log("erro", err)
-        });
-        usernameRef.current.value=null;
-        emailRef.current.value=null;
-        passRef.current.value=null
+        let name = usernameRef.current.value,
+            email = emailRef.current.value,
+            password = passRef.current.value
+            console.log(name,email,password)
+        if(name && email && password){
+            await fetch('http://localhost:3000/api/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    password: password
+                })
+            }).then(async res => {
+                const resp = await res.json()
+                if (res.status === 200) {
+                    Router.replace('/')
+                    setMessage(resp)
+                }
+    
+            }).catch(err => {
+                console.log("erro", err)
+                setMessage(err)
+            });
+            usernameRef.current.value = null;
+            emailRef.current.value = null;
+            passRef.current.value = null
+        }else{
+            setMessage("Please fill all information")
+        }
     }
 
     return (

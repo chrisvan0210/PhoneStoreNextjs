@@ -1,9 +1,13 @@
 export interface UserPerson {
     id: number;
+    friend: any;
+    username:string;
+}
+
+export interface typePHone{
+    id: number;
     brand: string;
     model: string;
-    ownerId: string;
-    friend: any;
     phone : string;
-    username:string;
+    imageUrl:string
 }

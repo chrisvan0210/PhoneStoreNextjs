@@ -1,18 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { secretKey } from '../../../api/secretKey';
-const sqlite3 = require('sqlite3');
-const sqlite = require('sqlite');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 import cookie from 'cookie'
+import { db } from '../../../api/openDB';
 
 export default async function Login(req: NextApiRequest, res: NextApiResponse) {
 
-    const db = await sqlite.open({
-        filename: './database.db',
-        driver: sqlite3.Database,
-    });
-    // await db.migrate({ force: 'last' });
     if (req.method === 'POST') {
         const people = await db.get(`SELECT * FROM People WHERE email= ?`, req.body.email);
         bcrypt.compare(req.body.password, people.password, async function (err, result) {
@@ -28,7 +22,8 @@ export default async function Login(req: NextApiRequest, res: NextApiResponse) {
                     path:'/' 
                 }))
 
-                res.json({ message: "Welcome back Master!" })
+                res.json({ message: "Welcome back Master!" });
+               
             } else {
                 res.json({ message: "Oop! Something went wrong!" })
             }
