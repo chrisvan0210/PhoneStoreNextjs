@@ -1,13 +1,23 @@
 export interface UserPerson {
+    map(arg0: (user: any, idx: any) => JSX.Element): import("react").ReactNode;
     id: number;
     friend: any;
-    username:string;
+    name:string;
+    userInfo : string[];
 }
 
 export interface typePhone{
     id: number;
     brand: string;
     model: string;
-    phone : string;
+    price : string;
+    imageUrl:string
+}
+
+export interface typeLaptop{
+    id: number;
+    brand: string;
+    model: string;
+    price : string;
     imageUrl:string
 }

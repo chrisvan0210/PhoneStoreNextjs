@@ -9,10 +9,12 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
-import { NextPageContext } from 'next';
+import { GetStaticPaths, GetStaticProps, NextPageContext } from 'next';
 import Link from 'next/link';
-import { myGetApi } from '../../../api/myGetApi';
-import { typePHone } from '../../../api/typeData';
+
+import {useRouter} from 'next/router'
+import { typePhone } from '../../../api/typeData';
+import { openDB } from '../../../api/openDB';
 
 
 const useStyles = makeStyles({
@@ -45,11 +47,18 @@ const useStyles = makeStyles({
 });
 
 export interface PhonesProps {
-    Phone: typePHone[] | undefined
+    Phone: typePhone[] | undefined
+
 }
 
 export default function Phones({ Phone }: PhonesProps) {
     const classes = useStyles();
+    const router = useRouter();
+    if(router.isFallback){
+        return(
+            <div>Loading...................</div>
+        )
+    }
     return (
         <div className={classes.root}>
             <Card className={classes.cardWrap}>
@@ -83,15 +92,39 @@ export default function Phones({ Phone }: PhonesProps) {
                     </Button>
                 </CardActions>
             </Card>
-            
+
         </div>
 
     );
 }
+// Phones.getInitialProps = async (ctx: NextPageContext) => {
+//     const resp = await myGetApiRqAuth(`http://localhost:3000/api/phonesBrands/${ctx.query.id}`, ctx);
+//     return { Phone: resp.res }
+// }
 
+// Phones.getInitialProps = async (ctx: NextPageContext) => {
+//     console.log("id", ctx.query.id)
+//     const resp = await myGetData(`http://localhost:3000/api/phonesBrands/${ctx.query.id}`);
+//     return { Phone: resp.res }
+// }
 
-Phones.getInitialProps = async (ctx: NextPageContext) => {
-    const resp = await myGetApi(`http://localhost:3000/api/phonesBrands/${ctx.query.id}`, ctx);
-    return { Phone: resp.res }
+export const getStaticProps: GetStaticProps= async ctx => {
+    const id = ctx.params?.id as string;
+
+    const db = await openDB();
+    const Phone = await db.all('SELECT * FROM Phone where id=?', +id);
+    return { props: { Phone } }
 }
 
+export const getStaticPaths : GetStaticPaths<{id:string}> = async()=>{
+    const db = await openDB();
+    const allPhones = await db.all('SELECT * FROM Phone ');
+    const paths = allPhones.map(phone=>{
+        return {params: {id: phone.id.toString() }};
+    })
+    return {
+        fallback: true,
+        paths:paths
+        // paths:[{params:{id:'1'}},{params: {id:'2'}}]
+    }
+}

@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link';
+import  Router  from 'next/router';
+
 
 function Login(props) {
     const emailRef = useRef<HTMLInputElement>(null);
@@ -18,10 +20,13 @@ function Login(props) {
                 password:passRef.current.value
             })
         }).then(async res=>{
-        const resp = await res.json()
-         setMessage(resp)
+        const resp = await res.json();
+         setMessage(resp);
+         if(res.status === 200){
+            Router.replace('/');
+         }
         }).catch(err=>{
-            console.log("erro",err)
+            setMessage("Email or password is not correct!");
         });
         emailRef.current.value=null;
         passRef.current.value=null

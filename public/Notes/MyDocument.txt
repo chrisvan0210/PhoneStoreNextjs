@@ -1,0 +1,13 @@
+
+getInitialProps : - Use to get data from outside api (third party etc..).
+                  - Call Api url.
+                  - Run on : Client Side Navigation and Sever Side Rendering.
+
+getStaticProps : - Run on Server Side and only run on build time.
+                 - Call directly to Database.
+                 - note : we can save data on cdn and get it from here.
+
+getServerSideProps : - Use to get data directly to you database (none api).
+                     - Run on : Client Side Navigation and Sever Side Rendering:
+                        + CSN : call to Api.
+                        + SSR : Call to Database.

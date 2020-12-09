@@ -14,3 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+#nprogress .bar {
+  background: #e5e900;
+  height: 10px;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px #e5e900, 0 0 5px #e5e900;
+}

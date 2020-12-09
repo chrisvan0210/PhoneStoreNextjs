@@ -3,14 +3,16 @@ import { secretKey } from '../../../api/secretKey';
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 import cookie from 'cookie'
-import { db } from '../../../api/openDB';
+import { openDB } from '../../../api/openDB';
 
 export default async function Login(req: NextApiRequest, res: NextApiResponse) {
-
+    const db = await openDB();
     if (req.method === 'POST') {
         const people = await db.get(`SELECT * FROM People WHERE email= ?`, req.body.email);
         bcrypt.compare(req.body.password, people.password, async function (err, result) {
             // result == true
+            
+            console.log("login")
             if (!err && result) {
                 const  token = jwt.sign({ sub:people.id,Email:people.email }, secretKey,{expiresIn:'1h'});
                 
@@ -21,7 +23,6 @@ export default async function Login(req: NextApiRequest, res: NextApiResponse) {
                     maxAge: 3600,
                     path:'/' 
                 }))
-
                 res.json({ message: "Welcome back Master!" });
                
             } else {

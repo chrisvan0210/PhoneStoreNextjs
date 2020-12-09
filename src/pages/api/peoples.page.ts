@@ -3,6 +3,7 @@ import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 import sqlite3 from 'sqlite3';
 const sqlite = require('sqlite');
 import { verify } from 'jsonwebtoken'
+import { openDB } from '../../../api/openDB';
 
 
 export const authenticated = (fn: NextApiHandler) => async (
@@ -23,10 +24,8 @@ export const authenticated = (fn: NextApiHandler) => async (
 export default authenticated(
   async function getAllPeople(req: NextApiRequest, res: NextApiResponse) {
 
-    const db = await sqlite.open({
-      filename: './database.db',
-      driver: sqlite3.Database,
-    });
+    const db = await openDB()
+    
     const people = await db.all('SELECT id,name,email FROM People');
 
     res.json(people)

@@ -4,17 +4,12 @@ const saltRounds = 10;
 const jwt = require('jsonwebtoken');
 import cookie from 'cookie'
 import { secretKey } from '../../../api/secretKey';
-// import { db } from '../../../api/openDB';
-const sqlite3 = require('sqlite3');
-const sqlite = require('sqlite');
+import { openDB } from '../../../api/openDB';
+
+
 export default async function SignUp(req: NextApiRequest, res: NextApiResponse) {
-
-    //https://stackoverflow.com/questions/63823970/sqlite-filename-cannot-be-null-undefined
-
-    const db = await sqlite.open({
-        filename: './database.db',
-        driver: sqlite3.Database,
-    })
+    const db = await openDB()
+    // await db.migrate({force:true});
 
     if (req.method === 'POST') {
         bcrypt.hash(req.body.password, saltRounds, async function (err, hash) {
