@@ -37,7 +37,7 @@ export default async function SignUp(req: NextApiRequest, res: NextApiResponse) 
 
 
     } else {
-        res.status(405).json({ message: "This page only for Post!!!" })
+        res.status(405).json({ message: "We got you!!!" })
     }
 
 

@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import theme from './theme.page';
+
 
 import Headers from './headers'
 import { Router } from 'next/router';
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import '../../styles/globals.css'
+import theme from './theme';
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
