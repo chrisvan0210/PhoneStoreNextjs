@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
+
 function index() {
     return (
         <div>
@@ -21,3 +22,5 @@ function index() {
 }
 
 export default index
+
+

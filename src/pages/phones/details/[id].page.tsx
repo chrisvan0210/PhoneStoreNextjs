@@ -127,7 +127,7 @@ export const getStaticPaths : GetStaticPaths<{id:string}> = async()=>{
         return {params: {id: phone.id.toString() }};
     })
     return {
-        fallback: true,
+        fallback: false,
         paths:paths
         // paths:[{params:{id:'1'}},{params: {id:'2'}}]
     }

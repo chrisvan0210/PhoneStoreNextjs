@@ -13,4 +13,4 @@ getServerSideProps : - Use to get data directly to you database (none api).
                         + SSR : Call to Database.
 
 
-Have error when run "npm run dev" : clear .next directory by command "rm -r .next\"
+Have error when run "npm run dev" : clear .next directory by command "rm -r some-directory" (example : rm -r .next\)
