@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Index from './index.page';\nexport var __N_SSG = true;\nexport default Index;","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,123 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-a928219009fd672c1f9f.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/EcybOj2hA2_-kRFaORuLj/_buildManifest.js",
+    "static/EcybOj2hA2_-kRFaORuLj/_ssgManifest.js"
+  ],
+  "pages": {
+    "/": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/pages/index-65966c2d9926ebac9ed6.js"
+    ],
+    "/_app": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/6440364e2a14b973ccca784e8fa0e200aa035cf3.f7076c4fd14aa4cc68a9.js",
+      "static/css/b4ca720f3df10122f9e3.css",
+      "static/chunks/pages/_app-f157ef8c4b74437c6dbe.js"
+    ],
+    "/_error": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/pages/_error-0efa141f9a34607f429f.js"
+    ],
+    "/laptops": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/6440364e2a14b973ccca784e8fa0e200aa035cf3.f7076c4fd14aa4cc68a9.js",
+      "static/chunks/6209f4b83acba35177759fb6cdbea994a623dd82.380141a8e2d3a09c1dc8.js",
+      "static/chunks/pages/laptops-d979e92ca0990df81d03.js"
+    ],
+    "/laptops/[currentPage]": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/6440364e2a14b973ccca784e8fa0e200aa035cf3.f7076c4fd14aa4cc68a9.js",
+      "static/chunks/6209f4b83acba35177759fb6cdbea994a623dd82.380141a8e2d3a09c1dc8.js",
+      "static/chunks/pages/laptops/[currentPage]-48cbe84edaa957bca077.js"
+    ],
+    "/laptops/details/[id]": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/6440364e2a14b973ccca784e8fa0e200aa035cf3.f7076c4fd14aa4cc68a9.js",
+      "static/chunks/6209f4b83acba35177759fb6cdbea994a623dd82.380141a8e2d3a09c1dc8.js",
+      "static/chunks/pages/laptops/details/[id]-43de0c906a2c40354492.js"
+    ],
+    "/login": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/pages/login-59f41560c2b0a735b7cd.js"
+    ],
+    "/members": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/pages/members-75770e433e73dada39d0.js"
+    ],
+    "/peoplesOld": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/pages/peoplesOld-0aaa37993fc86c4d9182.js"
+    ],
+    "/phones": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/6440364e2a14b973ccca784e8fa0e200aa035cf3.f7076c4fd14aa4cc68a9.js",
+      "static/chunks/6209f4b83acba35177759fb6cdbea994a623dd82.380141a8e2d3a09c1dc8.js",
+      "static/chunks/pages/phones-5651d7587d3a6a7ffdf4.js"
+    ],
+    "/phones/[currentPage]": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/6440364e2a14b973ccca784e8fa0e200aa035cf3.f7076c4fd14aa4cc68a9.js",
+      "static/chunks/6209f4b83acba35177759fb6cdbea994a623dd82.380141a8e2d3a09c1dc8.js",
+      "static/chunks/pages/phones/[currentPage]-05792b7b7dd2128177b4.js"
+    ],
+    "/phones/details/[id]": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/6440364e2a14b973ccca784e8fa0e200aa035cf3.f7076c4fd14aa4cc68a9.js",
+      "static/chunks/6209f4b83acba35177759fb6cdbea994a623dd82.380141a8e2d3a09c1dc8.js",
+      "static/chunks/pages/phones/details/[id]-9eda2a0d949d87ff8a69.js"
+    ],
+    "/signup": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/81cdfe5a829b35e953fc0cfb34ef950fad3190e9.7aeaa347992b934f6278.js",
+      "static/chunks/pages/signup-3fb13f2b90a2b3d3eaad.js"
+    ],
+    "/testEnv": [
+      "static/chunks/main-fdde944057a12e14cea6.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.875a76945b3e17eb355d.js",
+      "static/chunks/pages/testEnv-6ded7cc20b97f2dbf588.js"
+    ]
+  },
+  "ampFirstPages": []
+}
