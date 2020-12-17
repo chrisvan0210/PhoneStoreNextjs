@@ -1,1 +1,0 @@
-_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[17],{"1ka9":function(n,_,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/phones/[currentPage]",function(){return t("sW8t")}])},sW8t:function(n,_,t){"use strict";t.r(_),t.d(_,"__N_SSG",(function(){return o}));var u=t("cVB/"),o=!0;_.default=u.default}},[["1ka9",0,1,2,3,4,5]]]);
