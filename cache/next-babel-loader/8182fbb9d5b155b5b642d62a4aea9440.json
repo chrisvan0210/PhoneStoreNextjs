@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { openDB } from '../../../api/openDB';\nexport default async function getAllPeople(req, res) {\n  console.log(\"name\", req.query.phoneName);\n  const db = await openDB();\n  const Phone = await db.all(`SELECT * FROM Phone where model like 'iphone'  `);\n  res.json(Phone);\n}","map":null,"metadata":{},"sourceType":"module"}
