@@ -46,11 +46,12 @@ export default function MyApp(props) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
-
+  const assetPrefix = '/PhoneStoreNextjs';
   return (
     <React.Fragment>
       <Head>
-        <title>who page</title>
+        <link ref="shotcut icon" href={assetPrefix +"/favicon.ico"}></link>
+        <title>Phone page</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
