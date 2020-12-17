@@ -58,13 +58,12 @@ export default function Phones({ Phone }: PhonesProps) {
     //     window.history.back()
     // }
 
-
-
     if(router.isFallback){
         return(
             <div>Loading...................</div>
         )
     }
+    const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH;
     return (
         <div className={classes.root}>
             <Card className={classes.cardWrap}>
@@ -73,7 +72,7 @@ export default function Phones({ Phone }: PhonesProps) {
                     <div className={classes.padding5}>
                         <CardMedia
                             className={classes.media}
-                            image={Phone[0].imageUrl}
+                            image={assetPrefix + Phone[0].imageUrl}
                             title={Phone[0].model}
                         />
                     </div>
