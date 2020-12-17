@@ -85,7 +85,7 @@ export default function Index({ phoneList, currentPageNumber, totalOfPage }: Pho
   const [next, setNext] = useState(true)
   const [currentStep, setCurrentStep] = useState(currentPageNumber)
   const [pagination, setPagination] = useState(1)
-  
+
   //------ 4 is a number of pages every paginations -------//
   const numberButtons = 4;
   //Control back and forward page
@@ -111,7 +111,7 @@ export default function Index({ phoneList, currentPageNumber, totalOfPage }: Pho
     if (pagination + numberButtons > totalOfPage) {
       setNext(false)
     } else {
-     setNext(true)
+      setNext(true)
     }
     return () => {
     }
@@ -122,13 +122,13 @@ export default function Index({ phoneList, currentPageNumber, totalOfPage }: Pho
     setCurrentStep(id + 1);
   }
   const handlePrevious = () => {
-    if(pagination<=1) return;
+    if (pagination <= 1) return;
     console.log("fire")
     setPagination(pagination - numberButtons)
     setCurrentStep(pagination - numberButtons);
   }
   const handleNext = () => {
-    if(pagination + numberButtons > totalOfPage) return;
+    if (pagination + numberButtons > totalOfPage) return;
     setPagination(pagination + numberButtons)
     setCurrentStep(pagination + numberButtons);
   }
@@ -144,7 +144,7 @@ export default function Index({ phoneList, currentPageNumber, totalOfPage }: Pho
     )
   })
 
-
+  const assetPrefix = '/PhoneStoreNextjs';
 
   const renderPhoneCard = phoneList.map((phone, idx) => {
     return (
@@ -155,7 +155,7 @@ export default function Index({ phoneList, currentPageNumber, totalOfPage }: Pho
             <Link href={`/phones/details/${phone.id}`}>
               <CardMedia
                 className={classes.media}
-                image={phone.imageUrl}
+                image={assetPrefix + phone.imageUrl}
                 title={phone.model}
               />
             </Link>
@@ -211,7 +211,7 @@ export default function Index({ phoneList, currentPageNumber, totalOfPage }: Pho
         </Link>
         {stepArr}
         <Link href={`/phones/${pagination + 4}`}>
-          <button onClick={handleNext} className={next === true ? 'show' : 'hide'} disabled={!next}> 
+          <button onClick={handleNext} className={next === true ? 'show' : 'hide'} disabled={!next}>
             <a> Next </a>
           </button>
         </Link>
