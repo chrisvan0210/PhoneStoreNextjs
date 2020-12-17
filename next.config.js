@@ -3,12 +3,15 @@ require('dotenv').config()
 module.exports = {
     pageExtensions : ['page.js','page.jsx','page.ts','page.tsx'],
     exportPathMap: async function (
-        defaultPathMap,
-        { dev, dir, outDir, distDir, buildId }
-      ) {
-        return {
-        }
-      },
+      defaultPathMap,
+      { dev, dir, outDir, distDir, buildId }
+    ) {
+      return {
+        '/': { page: '/' },
+        '/laptops': { page: '/laptops' },
+        '/phones': { page: '/phones' },
+      }
+    },
     env:{
         MY_STEP : process.env.MY_STEP
     },
