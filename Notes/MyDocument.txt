@@ -9,8 +9,8 @@ getStaticProps : - Call directly to Database.
 
 getServerSideProps : - Use to get data directly to you database (none api).
                      - Run on : Client Side Navigation and Sever Side Rendering(on run time and build time):
-                        + CSN : call to Api.
-                        + SSR : Call to Database.
+                        + CSN : Call Api url.
+                        + SSR : Call Directly to Database.
 
 
 Have error when run "npm run dev" : clear .next directory by command "rm -r some-directory" (example : rm -r .next\)
