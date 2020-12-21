@@ -47,6 +47,8 @@ export default function MyApp(props) {
     }
   }, []);
   const assetPrefix = process.env.NEXT_PUBLIC_VERCEL_URL || '';
+  console.log("enviroment",process.env.NEXT_PUBLIC_VERCEL_URL);
+  console.log("enviroment",process.env.IMAGE_URL);
   return (
     <React.Fragment>
       <Head>
