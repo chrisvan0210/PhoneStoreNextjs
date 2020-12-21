@@ -63,7 +63,9 @@ export default function Phones({ Phone }: PhonesProps) {
             <div>Loading...................</div>
         )
     }
-    const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH;
+
+    const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
+    
     return (
         <div className={classes.root}>
             <Card className={classes.cardWrap}>

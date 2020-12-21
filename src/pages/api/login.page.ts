@@ -12,19 +12,19 @@ export default async function Login(req: NextApiRequest, res: NextApiResponse) {
         bcrypt.compare(req.body.password, people.password, async function (err, result) {
             // result == true
             
-            console.log("login")
+           
             if (!err && result) {
                 const  token = jwt.sign({ sub:people.id,Email:people.email }, secretKey,{expiresIn:'1h'});
-                
+               
                 res.setHeader('Set-Cookie',cookie.serialize('auth',token,{
                     httpOnly:true,
-                    secure:process.env.NODE_ENV !== 'development', // allow not use https on dev
+                    secure:process.env.NODE_ENV !== 'development', // not require use https on dev environment
                     sameSite:'strict', //same with true
                     maxAge: 3600,
                     path:'/' 
                 }))
                 res.json({ message: "Welcome back Master!" });
-               
+                console.log("login",res.json({ message: "Welcome back Master!" }))
             } else {
                 res.json({ message: "Oop! Something went wrong!" })
             }

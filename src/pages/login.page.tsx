@@ -10,7 +10,7 @@ function Login(props) {
     const [message, setMessage] = useState<any>(null);
     const  handleLogin= async (e)=>{
         e.preventDefault();
-        await fetch('http://localhost:3000/api/login',{
+        await fetch(`${process.env.API_URL}/api/login`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

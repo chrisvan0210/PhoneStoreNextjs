@@ -12,6 +12,9 @@ export interface MemberProps {
 export default function Peoples({ userInfo }: MemberProps) {
     return (
         <div>
+            
+            <h2>This is list of members:</h2>
+            <br></br>
             {
                 userInfo.map((user, idx) => {
                     return (
@@ -38,7 +41,7 @@ export const getServerSideProps: GetServerSideProps<MemberProps> = async (ctx: G
 
     //******THIS IS CLIENT SIDE RENDERING******//
     const cookie = ctx.req?.headers.cookie
-    const resp = await fetch('http://localhost:3000/api/peoples', {
+    const resp = await fetch(`${process.env.API_URL}/api/peoples`, {
         headers: {
             cookie: cookie!
         }
@@ -49,7 +52,7 @@ export const getServerSideProps: GetServerSideProps<MemberProps> = async (ctx: G
     }
     if (resp.status === 401 && ctx.req) { // run if on Server side
         ctx.res?.writeHead(302, {
-            Location: 'http://localhost:3000/login'
+            Location: `${process.env.API_URL}/login`
         });
         ctx.res.end();
         return { props: { userInfo: await resp.json() } };

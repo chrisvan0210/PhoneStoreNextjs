@@ -10,7 +10,7 @@ module.exports = {
     return {
       '/': { page: '/' },
       '/laptops': { page: '/laptops' },
-      '/phones': { page: '/phones' },
+      '/phones': { page: '/phones' }
     }
   },
   env: {

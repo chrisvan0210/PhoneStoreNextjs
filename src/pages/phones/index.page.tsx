@@ -144,7 +144,7 @@ export default function Index({ phoneList, currentPageNumber, totalOfPage }: Pho
     )
   })
 
-  const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH;
+  const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   const renderPhoneCard = phoneList.map((phone, idx) => {
     return (
@@ -186,7 +186,6 @@ export default function Index({ phoneList, currentPageNumber, totalOfPage }: Pho
       </Card>
     )
   })
-
   return (
     <div className={classes.root}>
       <div className={classes.wrapBtn}>

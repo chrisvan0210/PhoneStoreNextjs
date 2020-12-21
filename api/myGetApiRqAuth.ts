@@ -15,7 +15,7 @@ export async function myGetApiRqAuth(url:string,ctx:NextPageContext){
     }
     if(resp.status === 401 && ctx.req){ // run if on Server side
         ctx.res?.writeHead(302,{
-            Location: 'http://localhost:3000/login'
+            Location: `${process.env.API_URL}/login`
         });
         ctx.res.end();
         return {};

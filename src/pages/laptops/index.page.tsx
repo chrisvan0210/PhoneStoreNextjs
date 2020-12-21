@@ -49,6 +49,8 @@ export interface LaptopsProps {
   numberProps : number
 }
 
+const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Index({ laptopList,numberProps }: LaptopsProps) {
   const classes = useStyles();
 
@@ -61,7 +63,7 @@ export default function Index({ laptopList,numberProps }: LaptopsProps) {
             <Link href={`/laptops/details/${laptop.id}`}>
               <CardMedia
                 className={classes.media}
-                image={laptop.imageUrl}
+                image={assetPrefix + laptop.imageUrl}
                 title={laptop.model}
               />
             </Link>

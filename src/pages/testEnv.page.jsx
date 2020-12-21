@@ -22,9 +22,8 @@ export default testEnv
 
 
 export const getServerSideProps = () =>{
-    console.log("fire")
     return {props:{
-        MY_SECRET : serverRuntimeConfig.MY_SECRET,
+        // MY_SECRET : serverRuntimeConfig.MY_SECRET, // DO NOT SEND THE SECRET THROUGH getServerSidePorps
         END_POINT : publicRuntimeConfig.API_ENDPOINT
     }}
 }

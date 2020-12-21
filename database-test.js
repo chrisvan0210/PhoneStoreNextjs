@@ -9,7 +9,7 @@ async function setup() {
 
   //add cutom path to your migrations
   // migrationsPath: './migrations', 
-  await db.migrate({ migrationsPath: './migrations',force: true});
+  // await db.migrate({ migrationsPath: './migrations',force: true});
 
   const people = await db.all('SELECT * FROM People');
   console.log('table Person', JSON.stringify(people, null, 2));

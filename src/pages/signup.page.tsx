@@ -13,9 +13,8 @@ function SignUp(props) {
         let name = usernameRef.current.value,
             email = emailRef.current.value,
             password = passRef.current.value
-            console.log(name,email,password)
         if(name && email && password){
-            await fetch('http://localhost:3000/api/signup', {
+            await fetch(`${process.env.API_URL}/api/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

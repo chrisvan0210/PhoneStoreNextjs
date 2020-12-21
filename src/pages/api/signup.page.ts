@@ -24,7 +24,7 @@ export default async function SignUp(req: NextApiRequest, res: NextApiResponse) 
 
                 res.setHeader('Set-Cookie', cookie.serialize('auth', token, {
                     httpOnly: true,
-                    secure: process.env.NODE_ENV !== 'development', // allow not use https on dev
+                    secure: process.env.NODE_ENV !== 'development', // not require use https on dev environment
                     sameSite: 'strict', //same with true
                     maxAge: 3600,
                     path: '/'

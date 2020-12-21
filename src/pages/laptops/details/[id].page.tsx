@@ -51,6 +51,8 @@ export interface LaptopsProps {
 
 }
 
+const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Phones({ Laptop }: LaptopsProps) {
     const classes = useStyles();
     const router = useRouter();
@@ -67,7 +69,7 @@ export default function Phones({ Laptop }: LaptopsProps) {
                     <div className={classes.padding5}>
                         <CardMedia
                             className={classes.media}
-                            image={Laptop[0].imageUrl}
+                            image={assetPrefix + Laptop[0].imageUrl}
                             title={Laptop[0].model}
                         />
                     </div>
