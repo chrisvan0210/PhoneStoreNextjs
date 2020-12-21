@@ -24,6 +24,6 @@ module.exports = {
     // Will be available on both server and client
     API_ENDPOINT: '/myapi/version'
   },
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH
+  basePath: process.env.NEXT_PUBLIC_VERCEL_URL,
+  assetPrefix: process.env.NEXT_PUBLIC_VERCEL_URL
 }

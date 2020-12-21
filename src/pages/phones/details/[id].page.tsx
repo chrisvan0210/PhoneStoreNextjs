@@ -64,7 +64,7 @@ export default function Phones({ Phone }: PhonesProps) {
         )
     }
 
-    const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
+    const assetPrefix = process.env.NEXT_PUBLIC_VERCEL_URL || '';
     
     return (
         <div className={classes.root}>

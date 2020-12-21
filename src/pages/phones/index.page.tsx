@@ -144,7 +144,7 @@ export default function Index({ phoneList, currentPageNumber, totalOfPage }: Pho
     )
   })
 
-  const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const assetPrefix = process.env.NEXT_PUBLIC_VERCEL_URL || '';
 
   const renderPhoneCard = phoneList.map((phone, idx) => {
     return (

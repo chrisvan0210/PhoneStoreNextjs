@@ -49,7 +49,7 @@ export interface LaptopsProps {
   numberProps : number
 }
 
-const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const assetPrefix = process.env.NEXT_PUBLIC_VERCEL_URL || '';
 
 export default function Index({ laptopList,numberProps }: LaptopsProps) {
   const classes = useStyles();
