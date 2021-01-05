@@ -7,11 +7,7 @@ module.exports = {
     defaultPathMap,
     { dev, dir, outDir, distDir, buildId }
   ) {
-    return {
-      '/': { page: '/' },
-      '/laptops': { page: '/laptops' },
-      '/phones': { page: '/phones' }
-    }
+    return {}
   },
   env: {
     MY_STEP: process.env.MY_STEP,
