@@ -28,9 +28,6 @@ jobs:
     - run: npm run build
       env:
           NEXT_PUBLIC_VERCEL_URL: /PhoneStoreNextjs
-    - run: npm run export
-      env:
-          NEXT_PUBLIC_VERCEL_URL: /PhoneStoreNextjs
     - run: touch ./out/.nojekyll
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
