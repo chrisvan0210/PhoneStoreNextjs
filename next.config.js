@@ -14,7 +14,8 @@ module.exports = {
     }
   },
   env: {
-    MY_STEP: process.env.MY_STEP
+    MY_STEP: process.env.MY_STEP,
+    MY_API_URL: process.env.MY_API_URL
   },
   serverRuntimeConfig: {
     // Will only be available on the server side

@@ -11,14 +11,14 @@ export async function myGetApiRqAuth(url:string,ctx:NextPageContext){
     })
     if(resp.status === 401 && !ctx.req){ // run if on Client side
          Router.replace('/login');
-         return {};
+         resp.status
     }
     if(resp.status === 401 && ctx.req){ // run if on Server side
         ctx.res?.writeHead(302,{
-            Location: `${process.env.API_URL}/login`
+            Location: `${process.env.MY_API_URL}/login`
         });
+        resp.status
         ctx.res.end();
-        return {};
     } 
     return {
         res : await resp.json()

@@ -8,13 +8,16 @@ function SignUp(props) {
     const emailRef = useRef<HTMLInputElement>(null);
     const passRef = useRef<HTMLInputElement>(null);
     const [message, setMessage] = useState<any>(null);
+
+    const MY_API_URL = process.env.MY_API_URL || '' ;
+
     const handleSignUp = async (e) => {
         e.preventDefault();
         let name = usernameRef.current.value,
             email = emailRef.current.value,
             password = passRef.current.value
         if(name && email && password){
-            await fetch(`${process.env.API_URL}/api/signup`, {
+            await fetch(`${MY_API_URL}/api/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

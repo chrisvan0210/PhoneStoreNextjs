@@ -1,4 +1,4 @@
-import { secretKey } from './../../../api/secretKey';
+import { secretKey } from '../../../api/secretKey';
 import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 import sqlite3 from 'sqlite3';
 const sqlite = require('sqlite');
@@ -10,7 +10,7 @@ export const authenticated = (fn: NextApiHandler) => async (
   req: NextApiRequest,
   res: NextApiResponse
 ) => {
-  verify(req.cookies.auth, secretKey, async function (err, decoded) {
+  verify(req.cookies.auth!, secretKey, async function (err, decoded) {
     // err
     // decoded undefined
     if (!err && decoded) {

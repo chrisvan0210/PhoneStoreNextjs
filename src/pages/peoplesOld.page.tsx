@@ -13,7 +13,7 @@ export default function Peoples({userList} : any ) {
 }
 
 // Peoples.getInitialProps =async (ctx:NextPageContext)=>{
-//    const resp = await myGetApiRqAuth('http://localhost:3000/api/peoples',ctx)
+//    const resp = await myGetApiRqAuth('http://localhost:3000/api/members',ctx)
 //     return {userList:resp};
 // }
 

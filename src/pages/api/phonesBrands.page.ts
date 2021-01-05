@@ -1,3 +1,5 @@
+/***** CURRENT IS NOT USING THIS CAUSE PHONE ALREADY USING STATIC PROPS *****/
+
 import { secretKey } from './../../../api/secretKey';
 import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 import { verify } from 'jsonwebtoken'
@@ -8,7 +10,7 @@ export const authenticated = (fn: NextApiHandler) => async (
   req: NextApiRequest,
   res: NextApiResponse
 ) => {
-  verify(req.cookies.auth, secretKey, async function (err, decoded) {
+  verify(req.cookies.auth!, secretKey, async function (err, decoded) {
     // err
     // decoded undefined
     if (!err && decoded) {

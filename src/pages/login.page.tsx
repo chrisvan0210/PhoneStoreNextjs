@@ -8,9 +8,12 @@ function Login(props) {
     const emailRef = useRef<HTMLInputElement>(null);
     const passRef = useRef<HTMLInputElement>(null);
     const [message, setMessage] = useState<any>(null);
+
+    const MY_API_URL = process.env.MY_API_URL || '' ;
+
     const  handleLogin= async (e)=>{
         e.preventDefault();
-        await fetch(`${process.env.API_URL}/api/login`,{
+        await fetch(`${MY_API_URL}/api/login`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -47,8 +50,6 @@ function Login(props) {
                 <p></p>
                 <button type='submit' onClick={handleLogin}>Login</button>
             </form>
-            {JSON.stringify(message)}
-
 
             <div>
                 <Link href="/signup">

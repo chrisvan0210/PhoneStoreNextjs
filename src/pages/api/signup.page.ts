@@ -16,11 +16,11 @@ export default async function SignUp(req: NextApiRequest, res: NextApiResponse) 
 
             await db.run(`INSERT INTO People (name , email , password) VALUES("${req.body.name}","${req.body.email}","${hash}")`);
 
-            const people = await db.get('SELECT id,name,email FROM People ');
+            const member = await db.get('SELECT id,name,email FROM People ');
 
             // result == true
-            if (!err && people) {
-                const token = jwt.sign({ sub: people.id, Email: people.email }, secretKey, { expiresIn: '1h' });
+            if (!err && member) {
+                const token = jwt.sign({ sub: member.id, Email: member.email }, secretKey, { expiresIn: '1h' });
 
                 res.setHeader('Set-Cookie', cookie.serialize('auth', token, {
                     httpOnly: true,

@@ -3,7 +3,6 @@ export interface UserPerson {
     id: number;
     friend: any;
     name:string;
-    userInfo : string[];
 }
 
 export interface typePhone{
