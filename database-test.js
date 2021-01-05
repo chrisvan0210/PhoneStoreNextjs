@@ -1,12 +1,13 @@
 const sqlite3 = require('sqlite3');
 const sqlite = require('sqlite');
-
+// const path = require('path')
+// const dbPath = path.resolve(__dirname,'database.sqlite')
+// const db = new sqlite3.Database(dbPath)
 async function setup() {
   const db = await sqlite.open({
     filename: './database.sqlite',
     driver: sqlite3.Database,
   });
-
   //add cutom path to your migrations
   // migrationsPath: './migrations', 
   // await db.migrate({ migrationsPath: './migrations',force: true});

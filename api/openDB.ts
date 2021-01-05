@@ -3,8 +3,8 @@ const sqlite = require('sqlite');
 
  //https://stackoverflow.com/questions/63823970/sqlite-filename-cannot-be-null-undefined
 
-export async function openDB() {
-    return sqlite.open({
+export function openDB() {
+    return  sqlite.open({
         filename: './database.sqlite',
         driver: sqlite3.Database,
     });
